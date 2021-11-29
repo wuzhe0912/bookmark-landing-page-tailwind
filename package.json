@@ -1,0 +1,23 @@
+{
+  "name": "bookmark-landing-page-tailwind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:tailwind": "tailwind build src/style.css -o public/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuzhe0912/bookmark-landing-page-tailwind.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wuzhe0912/bookmark-landing-page-tailwind/issues"
+  },
+  "homepage": "https://github.com/wuzhe0912/bookmark-landing-page-tailwind#readme",
+  "dependencies": {
+    "tailwindcss": "^2.2.19"
+  }
+}
