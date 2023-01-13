@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 3001;
 const crypto = require('crypto');
+const cors = require('cors');
 
 app.get('/generate-key', (req, res) => {
   const { publicKey, privateKey } = crypto.generateKeyPairSync('rsa', {
@@ -32,6 +33,14 @@ app.post('/decrypt', (req, res) => {
   res.json({ decrypted: decrypted.toString('utf8') });
 });
 
-app.get('/', (req, res) => res.send('Hello World!'));
+app.use(cors());
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.json({
+    error: {
+      message: err.message,
+    },
+  });
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
